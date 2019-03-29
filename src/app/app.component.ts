@@ -10,6 +10,15 @@ export class AppComponent {
   constructor(){}
 
   isLogged = false;
+
   user = {name:'Pablo',admin:true};
+
+  login(){
+    this.isLogged = true;
+  }
+
+  logout(){
+    this.isLogged = false;
+  }
 
 }

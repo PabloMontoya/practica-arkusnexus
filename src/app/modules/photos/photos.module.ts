@@ -4,11 +4,14 @@ import { CommonModule } from '@angular/common';
 import { PhotosRoutingModule } from './photos-routing.module';
 import { PhotosComponent } from './components/photos/photos.component';
 
+import { MaterialModule } from 'src/app/material.module';
+
 @NgModule({
   declarations: [PhotosComponent],
   imports: [
     CommonModule,
-    PhotosRoutingModule
+    PhotosRoutingModule,
+    MaterialModule
   ]
 })
 export class PhotosModule { }
