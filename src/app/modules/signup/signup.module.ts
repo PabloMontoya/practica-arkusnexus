@@ -6,12 +6,15 @@ import { SignupComponent } from './components/signup/signup.component';
 
 import { MaterialModule } from 'src/app/material.module';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [SignupComponent],
   imports: [
     CommonModule,
     SignupRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class SignupModule { }

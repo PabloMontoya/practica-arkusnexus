@@ -3,10 +3,6 @@ main{
     margin-top: 2rem;
 }
 
-.text-center {
-    text-align: center;
-}
-
 mat-card{
     margin: auto;
     width: 25%;
@@ -14,7 +10,8 @@ mat-card{
     margin-top: 2rem;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+mat-form-field {
+    margin: auto;
+    width: 100%;
+    display: block;
 }
