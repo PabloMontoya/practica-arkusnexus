@@ -1,17 +1,43 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <button mat-raised-button mat-button color="primary" routerLink="home">Home</button>
-    <button mat-raised-button mat-button color="primary" routerLink="photos">Photos</button>
-    <button *ngIf="isLogged && user.admin" mat-raised-button mat-button color="primary" routerLink="admin">Admin</button>
+    <button mat-raised-button mat-button color="primary" routerLink="home">
+      Home
+    </button>
+    <button mat-raised-button mat-button color="primary" routerLink="photos">
+      Photos
+    </button>
+    <button
+      *ngIf="isLogged && user.admin"
+      mat-raised-button
+      mat-button
+      color="primary"
+      routerLink="admin"
+    >
+      Admin
+    </button>
     <span class="example-spacer"></span>
     <span *ngIf="!isLogged">
-      <button mat-raised-button mat-button color="primary" (click)="login()">Log In</button>
-      <button mat-raised-button mat-button color="primary" routerLink="signup">Sign Up</button>
+      <button mat-raised-button mat-button color="primary" (click)="login()">
+        Log In
+      </button>
+      <button mat-raised-button mat-button color="primary" routerLink="signup">
+        Sign Up
+      </button>
     </span>
     <span *ngIf="isLogged">
-      <span>Hi {{user.name}} </span>
-      <button mat-raised-button mat-button color="primary" (click)="logout()">Log Out</button>
+      <span>Hi {{ user.name }} </span>
+      <button
+        mat-raised-button
+        mat-button
+        color="primary"
+        (click)="toggleAdmin()"
+      >
+        Toggle Admin
+      </button>
+      <button mat-raised-button mat-button color="primary" (click)="logout()">
+        Log Out
+      </button>
     </span>
   </mat-toolbar-row>
 </mat-toolbar>

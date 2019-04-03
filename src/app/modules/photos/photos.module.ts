@@ -8,10 +8,6 @@ import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
   declarations: [PhotosComponent],
-  imports: [
-    CommonModule,
-    PhotosRoutingModule,
-    MaterialModule
-  ]
+  imports: [CommonModule, PhotosRoutingModule, MaterialModule]
 })
-export class PhotosModule { }
+export class PhotosModule {}
