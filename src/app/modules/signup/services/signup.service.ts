@@ -9,8 +9,6 @@ export class SignupService {
 
   constructor(private http: HttpClient) { }
 
-  signup(){
-    // return this.http.get<User>('https://jsonplaceholder.typicode.com/photos?_limit=10');
+  signup() {
   }
-  
 }

@@ -6,11 +6,11 @@ import { Photo } from '../models/Photo';
   providedIn: 'root'
 })
 export class PhotosService {
+  public photosSource = 'https://jsonplaceholder.typicode.com/photos?_limit=10';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getPhotos(){
-    return this.http.get<Photo[]>('https://jsonplaceholder.typicode.com/photos?_limit=10');
+  getPhotos() {
+    return this.http.get<Photo[]>(this.photosSource);
   }
-  
 }

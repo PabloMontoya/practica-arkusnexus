@@ -8,20 +8,21 @@ import { Photo } from 'src/app/modules/photos/models/Photo';
   styleUrls: ['./photos.component.css']
 })
 export class PhotosComponent implements OnInit {
-
-  constructor(public photosService: PhotosService) { }
-  
   photos: Photo[] = [];
 
-  ngOnInit() {
-    this.photosService.getPhotos()
-      .subscribe(
-        photos => {
-          this.photos = photos;
-          console.log(photos);
-        },
-        err => console.log(err)
-      )
+  constructor(public photosService: PhotosService) {}
+
+  get photosSource(): string {
+    return this.photosService.photosSource;
   }
 
+  ngOnInit() {
+    this.photosService.getPhotos().subscribe(
+      photos => {
+        this.photos = photos;
+        console.log(photos);
+      },
+      err => console.log(err)
+    );
+  }
 }

@@ -1,7 +1,7 @@
-export interface Photo{
-    albumId: Number,
-    id?: Number,
-    title: String,
-    url: String,
-    thumbnailUrl: String
+export interface Photo {
+    albumId: number;
+    id?: number;
+    title: string;
+    url: string;
+    thumbnailUrl: string;
 }

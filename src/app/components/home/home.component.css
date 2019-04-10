@@ -1,8 +1,9 @@
-h1,p {
+h1,
+p {
   text-align: center;
 }
 
-.center{
+.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
