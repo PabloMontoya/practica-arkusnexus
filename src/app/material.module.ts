@@ -7,7 +7,10 @@ import {
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTableModule,
+    MatSlideToggleModule,
+    MatIconModule
 } from '@angular/material';
 
 @NgModule({
@@ -18,7 +21,10 @@ import {
         MatDividerModule,
         MatFormFieldModule,
         MatInputModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatTableModule,
+        MatSlideToggleModule,
+        MatIconModule
     ],
     exports: [
         MatButtonModule,
@@ -27,7 +33,10 @@ import {
         MatDividerModule,
         MatFormFieldModule,
         MatInputModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatTableModule,
+        MatSlideToggleModule,
+        MatIconModule
     ]
 })
 export class MaterialModule{}

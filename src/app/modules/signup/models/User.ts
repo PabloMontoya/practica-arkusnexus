@@ -1,7 +1,7 @@
 export interface User {
-    firstname: string;
-    lastname: string;
+    firstname?: string;
+    lastname?: string;
     email: string;
-    password: string;
-    admin: boolean;
+    password?: string;
+    admin?: boolean;
 }

@@ -1,0 +1,39 @@
+<main>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title style="width:100%" class="text-center"> Login </mat-card-title>
+      <!--<mat-card-subtitle style="width:100%" class="text-center"> Create new user </mat-card-subtitle>-->
+    </mat-card-header>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(email.value,password.value)">
+
+        <mat-form-field>
+          <input matInput type="email" placeholder="E-mail" formControlName="email" required>
+          <mat-error *ngIf="email.invalid && email.touched">
+            Your email is invalid.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password" required>
+          <mat-error *ngIf="password.invalid && password.touched">
+            Provide a password
+          </mat-error>
+        </mat-form-field>
+          
+        <mat-error *ngIf="flagLogin">
+          No record was found.
+        </mat-error>
+
+        <mat-error *ngIf="flagPassword">
+          The password do not correspond to the user of that email.
+        </mat-error>
+
+        <mat-card-actions>
+          <button mat-button mat-stroked-button color="primary" style="width:100%" type="submit" [disabled]="!loginForm.valid"> Go! </button>
+        </mat-card-actions>
+
+    </form>
+    
+  </mat-card>
+</main>

@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './components/admin/admin.component';
+import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
   declarations: [AdminComponent],
-  imports: [CommonModule, AdminRoutingModule]
+  imports: [CommonModule, AdminRoutingModule, MaterialModule]
 })
 export class AdminModule {}

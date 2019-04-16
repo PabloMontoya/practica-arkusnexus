@@ -1,3 +1,50 @@
-<p>
-  admin works!
-</p>
+<main>
+    <h1 class="text-center">Users</h1>
+    <table mat-table [dataSource]="users" class="mat-elevation-z8">
+  
+        <!-- firstname Column -->
+        <ng-container matColumnDef="firstname">
+          <th mat-header-cell *matHeaderCellDef> <b>Firstname</b> </th>
+          <td mat-cell *matCellDef="let user"> {{user.firstname}} </td>
+        </ng-container>
+      
+        <!-- lastname Column -->
+        <ng-container matColumnDef="lastname">
+          <th mat-header-cell *matHeaderCellDef> <b>Lastname</b> </th>
+          <td mat-cell *matCellDef="let user"> {{user.lastname}} </td>
+        </ng-container>
+      
+        <!-- email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> <b>E-mail</b> </th>
+          <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+        </ng-container>
+      
+        <!-- admin Column -->
+        <ng-container matColumnDef="admin">
+          <th mat-header-cell *matHeaderCellDef> <b>Admin</b> </th>
+          <td mat-cell *matCellDef="let user"> 
+            <mat-slide-toggle color="primary" (change)="onChange(user)" [disabled]="loading" checked = {{user.admin}}></mat-slide-toggle>
+          </td>
+        </ng-container>
+    
+        <!-- actions Column -->
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> <b>Actions</b> </th>
+            <td mat-cell *matCellDef="let user">
+              <button mat-button>
+                  <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-button (click)="deleteUser(user)">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    </table>
+
+</main>
+

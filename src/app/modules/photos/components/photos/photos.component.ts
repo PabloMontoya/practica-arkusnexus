@@ -20,7 +20,6 @@ export class PhotosComponent implements OnInit {
     this.photosService.getPhotos().subscribe(
       photos => {
         this.photos = photos;
-        console.log(photos);
       },
       err => console.log(err)
     );

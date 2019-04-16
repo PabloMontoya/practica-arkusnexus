@@ -5,7 +5,7 @@
       <mat-card-subtitle style="width:100%" class="text-center"> Create new user </mat-card-subtitle>
     </mat-card-header>
 
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit(firstname.value, lastname.value, email.value, password.value)">
 
         <mat-form-field>
           <input matInput placeholder="First name" formControlName="firstname" required>

@@ -1,0 +1,11 @@
+main {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+table {
+  margin: auto;
+  width: 70%;
+  }
+
+.mat-header-cell, .mat-cell, h1 {    text-align: center;    }

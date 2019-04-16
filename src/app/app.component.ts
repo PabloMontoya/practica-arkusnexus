@@ -1,5 +1,5 @@
 import { AdminGuard } from './admin.guard';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,26 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   constructor(private router: Router) {}
 
-  user = { name: 'Pablo', admin: true };
+  get userName(): boolean {
+    return localStorage.username;
+  }
 
   get isLogged(): boolean {
     return localStorage.logged === 'true';
   }
-
-  login() {
-    localStorage.logged = true;
-  }
-
-  toggleAdmin() {
-    this.user.admin = localStorage.admin = !(localStorage.admin === 'true');
-    if (!this.user.admin) {
-      this.router.navigate(['/']);
-    }
+  
+  get isAdmin(): boolean {
+    return localStorage.admin === 'true';
   }
 
   logout() {
     localStorage.logged = false;
+    localStorage.admin = false;
+    localStorage.username = '';
+    if(this.router.url === '/admin'){
+      this.router.navigate(['/']);
+    }
   }
 }

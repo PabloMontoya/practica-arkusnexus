@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 import { SignupService } from 'src/app/modules/signup/services/signup.service';
 import { User } from 'src/app/modules/signup/models/User';
 import { PASSWORD_PATTERN } from './password';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-signup',
@@ -14,11 +16,10 @@ export class SignupComponent implements OnInit {
 	signupForm: FormGroup;
 
 	constructor ( public signupService: SignupService, 
-				  private fb: FormBuilder ) { }
+				  private fb: FormBuilder,
+				  private router: Router ) { }
 
 	passwordConfirming(c: AbstractControl): { invalid: boolean } {
-
-		
 		if (c.get('password').value !== c.get('confirm_password').value) {
 			return {invalid: true};
 		}
@@ -66,8 +67,17 @@ export class SignupComponent implements OnInit {
 		return this.signupForm.get('agree');
 	}
 
-	onSubmit(){
-		// TODO: consumir servicio conectado a api para crear usuarios
+	onSubmit(firstname, lastname, email, password){
+
+		let user = {firstname:firstname, lastname:lastname, email:email, password:password, admin:false};
+
+		this.signupService.signup(user).subscribe(
+			user => {
+				this.router.navigate(['/login']);
+				console.log(user)
+			},
+			err => console.log(err)
+		);
 	}
 	
 
